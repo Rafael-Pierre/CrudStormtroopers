@@ -8,9 +8,12 @@
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
 </head>
 <body>
-    <h1>teste extends</h1>
+
+    {% block header_logado%}
+    {% endblock %}
 
     {% block conteudo%}
+        <h1>teste extends2</h1>
     {% endblock %}
 </body>
 </html>
