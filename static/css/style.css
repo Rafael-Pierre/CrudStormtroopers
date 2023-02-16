@@ -1,0 +1,32 @@
+body{
+    margin: 0;
+}
+
+header{
+    display: flex;
+    padding: 15px;
+    background-color: black; 
+    color: white;
+    text-decoration: none;
+    justify-content: space-between;
+}
+
+header div a{
+
+    font-size: 20px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.navsBar{
+    margin-right: 2rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 5rem;
+    
+    width: 100%;
+}
+
+a:hover{
+    color: purple;
+}
