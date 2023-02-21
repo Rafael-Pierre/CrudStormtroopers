@@ -1,5 +1,6 @@
 body{
     margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 header{
@@ -29,4 +30,62 @@ header div a{
 
 a:hover{
     color: purple;
+}
+
+.container{
+
+    width: 100vw;
+    height: 95vh;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.container_interno{
+
+    border: 1px solid black;
+
+    width: 30rem;
+    height: 40rem;
+    gap: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.formCadastra{
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+input{
+    width: 10rem;
+}
+
+.inputsCadastra{
+    width: 80%;
+	padding: 10px;
+	border-radius: 15px;
+    background-color: white;
+    box-shadow: none;
+    border: 1px solid black;
+  
+}
+
+.imgST{
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.tituloPaginaCadastra{
+
+    display: flex;
+    flex-direction: row;
 }

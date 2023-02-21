@@ -1,5 +1,39 @@
-{% extends 'base_logado.html' %}
+{% extends 'base_logado.html' %} 
+
+{% macro inputs(labels, id, type=text) %}
+
+    <div>
+        <label for="{{ id }}">{{ labels }}:</label>
+        <input class="inputsCadastra" id="{{ id }}" type="{{ type }}" />
+    </div>
+
+{% endmacro %} 
 
 {% block conteudo%}
-    <h2>cadastra</h2>
+    <div class="container">
+        <div class="container_interno">
+
+            <div class="tituloPaginaCadastra">
+                <img src="{{ url_for('static', filename='images/imgST.png') }}" alt="STORMTROOPERRRR" class="imgST">
+                <h3>Cadastre um Stormtrooper:</h3>
+            </div>
+
+            <form class="formCadastra" action="">
+                {{ inputs('Nome',  'cadastraNome') }} 
+                {{ inputs('Número', 'cadastraNum', 'number') }}
+                {{ inputs('Peso', 'cadastraPeso', 'number') }}
+                {{ inputs('Altura', 'cadastraAltura', 'number') }} 
+                
+                <div class="">
+                    <label for="local">Local de atuação:</label>
+                    <select class="inputsCadastra" name="Local">
+                        <option value="Estrela da morte" selected>Estrela da morte</option>
+                        <option value="Planetas">Planetas</option>
+                        <option value="Patrulha espacial">Patrulha espacial</option>
+                    </select>    
+                </div>
+               
+            </form>
+        </div>   
+    </div>
 {% endblock %}
