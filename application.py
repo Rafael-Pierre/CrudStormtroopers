@@ -16,6 +16,18 @@ def home():
 
 @app.route('/cadastra', methods=["GET", "POST"])
 def cadastra():
+    print('entrei')
+
+    nome   = request.form.get('nome')
+    numero = request.form.get('numero')
+    peso   = request.form.get('peso')
+    altura = request.form.get('altura')
+    local  = request.form.get('local')
+    print(nome)
+    print(numero)
+    print(peso)
+    print(altura)
+    print(local)
     return render_template("cadastra.html")
 
 @app.route('/sobre', methods=["GET", "POST"])

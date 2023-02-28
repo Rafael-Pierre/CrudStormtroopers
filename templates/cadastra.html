@@ -1,10 +1,10 @@
 {% extends 'base_logado.html' %} 
 
-{% macro inputs(labels, id, type=text) %}
+{% macro inputs(labels, id, name, type=text) %}
 
     <div>
         <label for="{{ id }}">{{ labels }}:</label>
-        <input class="inputsCadastra" id="{{ id }}" type="{{ type }}" />
+        <input class="inputsCadastra" id="{{ id }}" type="{{ type }}" name="{{ name }}"/>
     </div>
 
 {% endmacro %} 
@@ -18,22 +18,22 @@
                 <h3>Cadastre um Stormtrooper:</h3>
             </div>
 
-            <form class="formCadastra" action="">
-                {{ inputs('Nome',  'cadastraNome') }} 
-                {{ inputs('Número', 'cadastraNum', 'number') }}
-                {{ inputs('Peso', 'cadastraPeso', 'number') }}
-                {{ inputs('Altura', 'cadastraAltura', 'number') }} 
+            <form class="formCadastra" id="formCadastra" action="/cadastra" method="POST">
+                {{ inputs('Nome',  'cadastraNome', 'nome', 'text') }} 
+                {{ inputs('Número', 'cadastraNum', 'numero', 'number') }}
+                {{ inputs('Peso', 'cadastraPeso', 'peso', 'number') }}
+                {{ inputs('Altura', 'cadastraAltura', 'altura', 'number') }} 
                 
                 <div class="">
                     <label for="local">Local de atuação:</label>
-                    <select class="inputsCadastra" name="Local">
+                    <select class="inputsCadastra" name="local">
                         <option value="Estrela da morte" selected>Estrela da morte</option>
                         <option value="Planetas">Planetas</option>
                         <option value="Patrulha espacial">Patrulha espacial</option>
                     </select>    
                 </div>
 
-                <button id="btn_cadastra">CADASTRAR</button>
+                <button id="btn_cadastra" type="submit">CADASTRAR</button>
                
             </form>
         </div>   
