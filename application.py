@@ -18,16 +18,17 @@ def home():
 def cadastra():
     print('entrei')
 
-    nome   = request.form.get('nome')
-    numero = request.form.get('numero')
-    peso   = request.form.get('peso')
-    altura = request.form.get('altura')
-    local  = request.form.get('local')
-    print(nome)
-    print(numero)
-    print(peso)
-    print(altura)
-    print(local)
+    operacao = request.form.get('operacao')
+    nome     = request.form.get('nome')
+    numero   = request.form.get('numero')
+    peso     = request.form.get('peso')
+    altura   = request.form.get('altura')
+    local    = request.form.get('local')
+    
+    if operacao == 'cad':
+        from db.cadastra import cadastra_st
+        return cadastra_st(nome, numero, peso, altura, local)
+
     return render_template("cadastra.html")
 
 @app.route('/sobre', methods=["GET", "POST"])

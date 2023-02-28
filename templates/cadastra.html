@@ -19,6 +19,9 @@
             </div>
 
             <form class="formCadastra" id="formCadastra" action="/cadastra" method="POST">
+
+                <input type="hidden" name="operacao" value="cad">
+
                 {{ inputs('Nome',  'cadastraNome', 'nome', 'text') }} 
                 {{ inputs('Número', 'cadastraNum', 'numero', 'number') }}
                 {{ inputs('Peso', 'cadastraPeso', 'peso', 'number') }}
