@@ -12,12 +12,12 @@ def login():
 
 @app.route('/home', methods=["GET", "POST"])
 def home():
+
+    
     return render_template("home.html")
 
 @app.route('/cadastra', methods=["GET", "POST"])
 def cadastra():
-    print('entrei')
-
     operacao = request.form.get('operacao')
     nome     = request.form.get('nome')
     numero   = request.form.get('numero')
