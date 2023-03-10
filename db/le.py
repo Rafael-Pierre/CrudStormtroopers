@@ -1,3 +1,4 @@
+
 def le_st():
     
     msg = ''
@@ -7,10 +8,10 @@ def le_st():
             nome, numero, peso, altura, local_atua
             from  public.stormtrooper;
     """
-    from db.conecta_db import executa_query
+    from conecta_db import executa_query
 
-    executa_query(sql)
+    executa_query(sql, True)
     
-    msg = 'cadastrado'
+    array_informacoes = executa_query(sql, True)
 
-    return msg
+    return array_informacoes

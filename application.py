@@ -13,8 +13,13 @@ def login():
 @app.route('/home', methods=["GET", "POST"])
 def home():
 
+    from db.le import le_st
+
+    dict_informacoes = le_st()
     
-    return render_template("home.html")
+    return render_template("home.html",
+                            dict_informacoes=dict_informacoes
+                        )
 
 @app.route('/cadastra', methods=["GET", "POST"])
 def cadastra():
@@ -35,3 +40,5 @@ def cadastra():
 def sobre():
     return render_template("sobre.html")
 
+if __name__ == "__main__":
+    app.run()
