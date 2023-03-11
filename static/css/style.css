@@ -101,3 +101,67 @@ input{
     margin-right: auto;
     cursor: pointer;
 }
+
+.cabecalho {
+    margin-top: 40px !important;
+    background-color: #696969;
+    box-sizing: border-box;
+    color: white;
+    display: flex;
+    padding: 10px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.atributos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 90%;
+}
+
+.atributos p {
+    font-weight: bold;
+    margin: 0;
+}
+
+.editores {
+    width: 10%;
+}
+
+.cabecalho_infos {
+    border: 1px solid black;
+    box-sizing: border-box;
+    display: flex;
+    padding: 10px;
+    width: 95%;
+    margin: 0 auto;
+    max-height: 50px;
+}
+
+.atributos_infos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 90%;
+}
+
+.atributos_infos p {
+    font-weight: bold;
+    margin: 0;
+}
+
+.editores_infos {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    width: 10%;
+}
+
+.tamanho_dado{
+    width: 200px;
+}
+
+.tamanho_dado p{
+    margin: 0 auto;
+}

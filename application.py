@@ -2,6 +2,8 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
+from db.le import le_st
+
 @app.route('/', methods=["GET", "POST"])
 def tela_inicial():
     return render_template("index.html")
@@ -13,10 +15,8 @@ def login():
 @app.route('/home', methods=["GET", "POST"])
 def home():
 
-    from db.le import le_st
-
     dict_informacoes = le_st()
-    
+    print(dict_informacoes)
     return render_template("home.html",
                             dict_informacoes=dict_informacoes
                         )

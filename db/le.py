@@ -8,10 +8,7 @@ def le_st():
             nome, numero, peso, altura, local_atua
             from  public.stormtrooper;
     """
-    from conecta_db import executa_query
-
-    executa_query(sql, True)
-    
+    from db.conecta_db import executa_query    
     array_informacoes = executa_query(sql, True)
 
     return array_informacoes

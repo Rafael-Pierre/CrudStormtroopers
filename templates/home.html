@@ -1,6 +1,56 @@
 {% extends 'base_logado.html' %}
 
 {% block conteudo%}
-    <h2>home</h2>
+    <div class="cabecalho">
+
+        <div class="atributos">
+            <div class="tamanho_dado">
+                <p>Número</p>
+            </div>
+            <div class="tamanho_dado">
+                <p>Nome</p>
+            </div>
+            <div class="tamanho_dado">
+                <p>Peso</p>
+            </div>
+            <div class="tamanho_dado">
+                <p>Altura</p>
+            </div>
+            <div class="tamanho_dado">
+                <p>Local de Atuação</p>
+            </div>
+        </div>
+
+        <div class="editores"></div>
+    </div>
+
+    {% for row in dict_informacoes%}
+        <div class="cabecalho_infos">
+
+            <div class="atributos_infos">
+                <div class="tamanho_dado">
+                    <p>{{row["numero"]}}</p>
+                </div>
+                <div class="tamanho_dado">
+                    <p>{{row["nome"]}}</p>
+                </div>
+                <div class="tamanho_dado">
+                    <p>{{row["peso"]}}</p>
+                </div>
+                <div class="tamanho_dado">
+                    <p>{{row["altura"]}}</p>
+                </div>
+                <div class="tamanho_dado">
+                    <p>{{row["local_atua"]}}</p>
+                </div>
+            </div>
+
+            <div class="editores_infos">
+                <p>E</p>
+                <p>R</p>
+            </div>
+        </div>
+    {% endfor %}
+
 {% endblock %}
 
