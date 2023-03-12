@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-from db.le import le_st
+from db.le import le_st, get_infos
 
 @app.route('/', methods=["GET", "POST"])
 def tela_inicial():
@@ -17,9 +17,29 @@ def home():
 
     dict_informacoes = le_st()
     print(dict_informacoes)
-    return render_template("home.html",
-                            dict_informacoes=dict_informacoes
-                        )
+    return render_template("home.html", dict_informacoes=dict_informacoes)
+
+@app.route('/home/<numero>', methods=["GET", "POST"])
+def get_number(numero):
+
+    dict_infos = get_infos(numero)
+    pk_numero = dict_infos[0]["numero"]
+    print(pk_numero)
+    return render_template("home.html", pk_numero=pk_numero, dict_informacoes=dict_infos)
+
+@app.route('/delete/<numero>', methods=["GET", "POST"])
+def delete(numero):
+
+    dict_informacoes = le_st()
+    print(dict_informacoes)
+    return render_template("home.html", dict_informacoes=dict_informacoes)
+
+@app.route('/edit/<numero>', methods=["GET", "POST"])
+def edit(numero):
+
+    dict_informacoes = le_st()
+    print(dict_informacoes)
+    return render_template("home.html", dict_informacoes=dict_informacoes)
 
 @app.route('/cadastra', methods=["GET", "POST"])
 def cadastra():

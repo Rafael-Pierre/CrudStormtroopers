@@ -24,7 +24,16 @@
         <div class="editores"></div>
     </div>
 
+    {% set tipo_icon = 'fa-sharp fa-solid fa-space-station-moon-construction' %}
     {% for row in dict_informacoes%}
+        {% if row["local_atua"] == "Estrela da morte"%}
+            {% set tipo_icon = 'fa-sharp fa-solid fa-space-station-moon-construction' %}
+        {% elif row["local_atua"] == "Planetas"%}
+            {% set tipo_icon = 'fa-sharp fa-solid fa-planet-ringed' %}
+        {% elif row["local_atua"] == "Patrulha espacial"%}
+            {% set tipo_icon = 'fa-sharp fa-solid fa-solar-system' %}
+        {% endif %}
+        
         <div class="cabecalho_infos">
 
             <div class="atributos_infos">
@@ -41,16 +50,32 @@
                     <p>{{row["altura"]}}</p>
                 </div>
                 <div class="tamanho_dado">
-                    <p>{{row["local_atua"]}}</p>
+                    <p>{{row["local_atua"]}} <i class=""></p>
                 </div>
             </div>
 
             <div class="editores_infos">
-                <p>E</p>
-                <p>R</p>
+                <a href="/home/{{row['numero']}}"><i class="fa-sharp fa-solid fa-trash"></i></a>
+                <button><i class="fa-sharp fa-solid fa-trash"></i> <a href="/home/{{row['numero']}}"></a></button>
+                <button><i class="fa-sharp fa-solid fa-pencil"></i></button>
             </div>
         </div>
     {% endfor %}
+    
+    {% if pk_numero %}
+        <section class="modal_apaga">
+            <div class="container">
+                <div class="fecha_modal"><a href="" ></a><i class="fa-sharp fa-solid fa-x"></i></div>
+                <h2>Deseja realmente apagar o Stormtrooper N° {{pk_numero}}?</h2>
+                <div class="botoes_del">
+                    <button class="btt_confirma">Confirmar</button>
+                    <button class="btt_cancela">Cancelar</button>
+                </div>
+            </div>
+        </section>
+    {% endif %}
+
+        <p> teste <i class="fa-sharp fa-solid fa-trash"></i></p>
 
 {% endblock %}
 

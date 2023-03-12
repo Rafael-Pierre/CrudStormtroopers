@@ -117,7 +117,7 @@ input{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 90%;
+    width: 95%;
 }
 
 .atributos p {
@@ -126,7 +126,7 @@ input{
 }
 
 .editores {
-    width: 10%;
+    width: 5%;
 }
 
 .cabecalho_infos {
@@ -143,7 +143,7 @@ input{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 90%;
+    width: 95%;
 }
 
 .atributos_infos p {
@@ -155,7 +155,8 @@ input{
     margin: 0;
     display: flex;
     flex-direction: row;
-    width: 10%;
+    width: 5%;
+    gap: 10px;
 }
 
 .tamanho_dado{
@@ -164,4 +165,78 @@ input{
 
 .tamanho_dado p{
     margin: 0 auto;
+}
+
+/* moldais de edicao */
+
+section.modal_apaga{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    background-color: #00000080;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section.modal_apaga .container{
+    background-color: white;
+    width: 300px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    border-radius: 20px;
+}
+
+section.modal_apaga h2{
+    font-size: 20px;
+    text-align: center;
+}
+
+section.modal_apaga .botoes_del{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+section.modal_apaga div.container .fecha_modal{
+    color: black;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    cursor: pointer;
+}
+
+.btt_confirma{
+    background: none;
+    border: 1px solid green;
+    color: green;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btt_confirma:hover{
+    background-color: green;
+    color: white;
+    transition: all .5s ease-in-out;
+}
+
+.btt_cancela{
+    background: none;
+    border: 1px solid red;
+    color: red;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btt_cancela:hover{
+    background-color: red;
+    color: white;
+    transition: all .5s ease-in-out;
 }

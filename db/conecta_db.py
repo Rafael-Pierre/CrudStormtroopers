@@ -15,7 +15,7 @@ def executa_query(sql, boo_select=False):
     if(boo_select):
         cursor = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
         cursor.execute(sql)
-        resultado = cursor.fetchall();
+        resultado = cursor.fetchall()
 
         return resultado
     
