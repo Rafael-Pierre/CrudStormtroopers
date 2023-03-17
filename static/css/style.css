@@ -221,6 +221,7 @@ section.modal_apaga div.container .fecha_modal{
     cursor: pointer;
     text-decoration: none;
     font-style: normal;
+    font-size: 18px;
 }
 
 .btt_confirma:hover{
@@ -238,6 +239,7 @@ section.modal_apaga div.container .fecha_modal{
     cursor: pointer;
     text-decoration: none;
     font-style: normal;
+    font-size: 18px;
 }
 
 .btt_cancela:hover{
@@ -295,6 +297,12 @@ section.modal_edita div.container .fecha_modal{
     height: 30rem;
 }
 
+.modal_edita .formCadastra{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /* fim */
 
 .btts{
@@ -306,11 +314,6 @@ section.modal_edita div.container .fecha_modal{
     max-height: 20px;
 }
 
-#formEdita{
-    display: flex;
-    align-items: center;
-}
-
 .select_local{
     display: flex;
     align-items: center;
@@ -320,4 +323,11 @@ section.modal_edita div.container .fecha_modal{
 
 .select_local select{
     width: 100%;
+}
+
+.sobre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }

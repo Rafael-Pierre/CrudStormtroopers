@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, jsonify
 
 app = Flask(__name__)
 
@@ -56,7 +56,7 @@ def edit():
     from db.edita import edit_st
     edit_st(nome, numero, peso, altura, local)
 
-    return redirect('/home')
+    return jsonify({"success": True})
 
 
 
