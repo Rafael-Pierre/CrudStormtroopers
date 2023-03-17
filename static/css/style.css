@@ -90,7 +90,7 @@ input{
     flex-direction: row;
 }
 
-#btn_cadastra{
+.btn_cadastra{
 
     width: 100px;
     height: 50px;
@@ -246,8 +246,78 @@ section.modal_apaga div.container .fecha_modal{
     transition: all .5s ease-in-out;
 }
 
+
+
+section.modal_edita{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    background-color: #00000080;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section.modal_edita .container{
+    background-color: white;
+    width: 30vw;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    border-radius: 20px;
+}
+
+section.modal_edita h2{
+    font-size: 20px;
+    text-align: center;
+}
+
+section.modal_edita .botoes_del{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+section.modal_edita div.container .fecha_modal{
+    color: black;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    cursor: pointer;
+}
+
+.modal_edita .container_interno{
+    width: 20rem;
+    height: 30rem;
+}
+
 /* fim */
 
 .btts{
     color: black;
+}
+
+.simbols_local{
+    max-width: 20px;
+    max-height: 20px;
+}
+
+#formEdita{
+    display: flex;
+    align-items: center;
+}
+
+.select_local{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    left: 0;
+}
+
+.select_local select{
+    width: 100%;
 }

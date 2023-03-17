@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
+    {% macro inputs(labels, id, name, type=text, value='') %}
+        <div>
+            <label for="{{ id }}">{{ labels }}:</label>
+            <input class="inputsCadastra" id="{{ id }}" type="{{ type }}" name="{{ name }}" value="{{ value }}"/>
+        </div>
+    {% endmacro %}
 
     {% block header_logado%}
     {% endblock %}

@@ -9,9 +9,13 @@ from db.apaga import apaga_st
 def tela_inicial():
     return render_template("index.html")
 
+
+
 @app.route('/login', methods=["GET", "POST"])
 def login():
     return render_template("login.html")
+
+
 
 @app.route('/home', methods=["GET", "POST"])
 def home():
@@ -19,24 +23,42 @@ def home():
     return render_template("home.html", dict_informacoes=dict_informacoes)
 
 @app.route('/home/apaga<numero>', methods=["GET", "POST"])
-def get_number(numero):
+def get_number_apaga(numero):
     dict_informacoes = le_st()
 
     dict_infos = get_infos(numero)
-    pk_numero = dict_infos[0]["numero"]
-    return render_template("home.html", pk_numero=pk_numero, dict_informacoes=dict_informacoes)
+    pk_apaga_numero = dict_infos[0]["numero"]
+    return render_template("home.html", pk_apaga_numero=pk_apaga_numero, dict_informacoes=dict_informacoes)
+
+@app.route('/home/edita<numero>', methods=["GET", "POST"])
+def get_number_edita(numero):
+    dict_informacoes = le_st()
+
+    dict_infos = get_infos(numero)
+    pk_edita_numero = dict_infos[0]["numero"]
+    return render_template("home.html", pk_edita_numero=pk_edita_numero, dict_informacoes=dict_informacoes, dict_infos=dict_infos)
+
+
 
 @app.route('/delete/<numero>', methods=["GET", "POST"])
 def delete(numero):
     apaga_st(numero)
     return redirect('/home')
 
-@app.route('/edit/<numero>', methods=["GET", "POST"])
-def edit(numero):
+@app.route('/edit', methods=["GET", "POST"])
+def edit():
+    nome     = request.form.get('nome')
+    numero   = request.form.get('numero')
+    peso     = request.form.get('peso')
+    altura   = request.form.get('altura')
+    local    = request.form.get('local')
 
-    dict_informacoes = le_st()
-    print(dict_informacoes)
-    return render_template("home.html", dict_informacoes=dict_informacoes)
+    from db.edita import edit_st
+    edit_st(nome, numero, peso, altura, local)
+
+    return redirect('/home')
+
+
 
 @app.route('/cadastra', methods=["GET", "POST"])
 def cadastra():

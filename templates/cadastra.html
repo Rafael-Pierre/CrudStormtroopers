@@ -1,13 +1,4 @@
-{% extends 'base_logado.html' %} 
-
-{% macro inputs(labels, id, name, type=text) %}
-
-    <div>
-        <label for="{{ id }}">{{ labels }}:</label>
-        <input class="inputsCadastra" id="{{ id }}" type="{{ type }}" name="{{ name }}"/>
-    </div>
-
-{% endmacro %} 
+{% extends 'base_logado.html' %}  
 
 {% block conteudo%}
     <div class="container">
@@ -36,7 +27,7 @@
                     </select>    
                 </div>
 
-                <button id="btn_cadastra" type="submit">CADASTRAR</button>
+                <button id="btn_cadastra" class="btn_cadastra" type="submit">CADASTRAR</button>
                
             </form>
         </div>   

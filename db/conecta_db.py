@@ -7,10 +7,13 @@ password  = 'LgutXJIlBMGq7bG5HRD2'
 database  = 'railway'
 port      = 8002
 
-def executa_query(sql, boo_select=False):
+def executa_query(sql, boo_select=False, debug=False):
     string_conexao = "user={0} password={1} host={2} port={3} dbname={4}".format( user, password, host, port, database)
     conn = psycopg2.connect(string_conexao)
     print("Connection established")
+
+    if(debug):
+        print(sql)
 
     if(boo_select):
         cursor = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
