@@ -1,8 +1,9 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
 
 from db.le import le_st, get_infos
+from db.apaga import apaga_st
 
 @app.route('/', methods=["GET", "POST"])
 def tela_inicial():
@@ -14,25 +15,21 @@ def login():
 
 @app.route('/home', methods=["GET", "POST"])
 def home():
-
     dict_informacoes = le_st()
-    print(dict_informacoes)
     return render_template("home.html", dict_informacoes=dict_informacoes)
 
-@app.route('/home/<numero>', methods=["GET", "POST"])
+@app.route('/home/apaga<numero>', methods=["GET", "POST"])
 def get_number(numero):
+    dict_informacoes = le_st()
 
     dict_infos = get_infos(numero)
     pk_numero = dict_infos[0]["numero"]
-    print(pk_numero)
-    return render_template("home.html", pk_numero=pk_numero, dict_informacoes=dict_infos)
+    return render_template("home.html", pk_numero=pk_numero, dict_informacoes=dict_informacoes)
 
 @app.route('/delete/<numero>', methods=["GET", "POST"])
 def delete(numero):
-
-    dict_informacoes = le_st()
-    print(dict_informacoes)
-    return render_template("home.html", dict_informacoes=dict_informacoes)
+    apaga_st(numero)
+    return redirect('/home')
 
 @app.route('/edit/<numero>', methods=["GET", "POST"])
 def edit(numero):

@@ -111,6 +111,7 @@ input{
     padding: 10px;
     width: 95%;
     margin: 0 auto;
+    border-radius: 10px 10px 0 0;
 }
 
 .atributos {
@@ -218,6 +219,8 @@ section.modal_apaga div.container .fecha_modal{
     padding: 5px;
     border-radius: 10px;
     cursor: pointer;
+    text-decoration: none;
+    font-style: normal;
 }
 
 .btt_confirma:hover{
@@ -233,10 +236,18 @@ section.modal_apaga div.container .fecha_modal{
     padding: 5px;
     border-radius: 10px;
     cursor: pointer;
+    text-decoration: none;
+    font-style: normal;
 }
 
 .btt_cancela:hover{
     background-color: red;
     color: white;
     transition: all .5s ease-in-out;
+}
+
+/* fim */
+
+.btts{
+    color: black;
 }
