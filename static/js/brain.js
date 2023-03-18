@@ -27,33 +27,26 @@ form.addEventListener("submit", function(event){
         });
 })
 
-let formEdit = document.querySelector("#formEdit");
+$(document).ready(function() {
+    var formData = new FormData(this);
 
-formEdit.addEventListener("submit", function(event){
-    event.preventDefault();
-    event.stopPropagation();
-    // crie um objeto FormData com os dados do formulário
-    var formData = new FormData(formEdit);
+    alert("Os dados serão atualizados");
+    $.ajax({
+      url: "/edit",
+      type: "POST",
+      data: formData,
+      processData: false,
+      contentType: false,
+    })
+    .done(function(data) {
+      // exibe uma mensagem de sucesso
+      alert("Update realizado com sucesso!");
+      // limpa os campos do formulário
+      formEdit.reset();
+    })
+    .fail(function(jqXHR, textStatus, errorThrown) {
+      // exibe uma mensagem de erro
+      alert("Erro ao alterar os campos: " + errorThrown);
+    });;
+});
 
-    // envie a requisição utilizando o fetch
-    fetch(formEdit.action, {
-      method: 'POST',
-      body: new URLSearchParams(formData),
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      }
-    })
-    .then(function(response) {
-      if (response.ok) {
-        setTimeout(function() {
-          alert('Update realizado com sucesso!');
-        }, 100);
-      } else {
-        alert('Erro ao alterar os campos');
-      }
-    })
-    .catch(function(error) {
-      alert('Erro ao alterar os campos');
-    });
-})
-    

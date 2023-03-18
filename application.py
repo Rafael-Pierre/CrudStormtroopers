@@ -56,7 +56,7 @@ def edit():
     from db.edita import edit_st
     edit_st(nome, numero, peso, altura, local)
 
-    return jsonify({"success": True})
+    return redirect('/home/edita' + numero)
 
 
 
