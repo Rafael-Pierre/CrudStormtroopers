@@ -1,11 +1,15 @@
 import psycopg2
 from psycopg2.extras import DictCursor
+from dotenv import load_dotenv
+import os
 
-host      = 'containers-us-west-166.railway.app'
-user      = 'postgres'
-password  = 'LgutXJIlBMGq7bG5HRD2'
-database  = 'railway'
-port      = 8002
+load_dotenv()
+
+host = os.getenv("host")
+user = os.getenv("user")
+password = os.getenv("password")
+database = os.getenv("database")
+port = os.getenv("port")
 
 def executa_query(sql, boo_select=False, debug=False):
     string_conexao = "user={0} password={1} host={2} port={3} dbname={4}".format( user, password, host, port, database)
