@@ -77,12 +77,11 @@
             <div class="container">
                 <form class="formCadastra" id="formEdit" action="/edit" method="POST">
                     <div class="container_interno">    
-        
+                        <input type="hidden" name="numero" value="{{ dict_infos[0]['numero'] }}">
+
                         {{ inputs('Nome',  'cadastraNome', 'nome', 'text', dict_infos[0]["nome"]) }} 
-                        {{ inputs('Número', 'cadastraNum', 'numero', 'number', dict_infos[0]["numero"]) }}
                         {{ inputs('Peso', 'cadastraPeso', 'peso', 'number', dict_infos[0]["peso"]) }}
                         {{ inputs('Altura', 'cadastraAltura', 'altura', 'number', dict_infos[0]["altura"]) }} 
-
                         <div class="select_local">
                             <label for="local">Local de atuação:</label>
                             <select class="inputsCadastra" name="local">
